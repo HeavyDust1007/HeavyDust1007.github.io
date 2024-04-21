@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/c1.css" />
+    <script src="./lib/jquery.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/lib/template-web.js"></script>
+    <title>短剑-武器-艾尔登法环图鉴</title>
+    <!-- //设置获取图书列表模版 -->
+    <script type="text/html" id="teml-booklist">
+      {{each data}}
+      <tr>
+        <td style="display:none">{{$value.id}}</td>
+        <td>{{$value.bookname}}</td>
+        <td>{{$value.author}}</td>
+        <td>{{$value.publisher}}</td>
+        <td>{{$value.booktype}}</td>
+        <td>{{$value.isbn}}</td>
+        <td><a href="#" class="aUpdate" data-id="{{$value.id}}">购买</a></td>
+      </tr>
+      {{/each}}
+    </script>
+    <script src="./js/index.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="./index.html"
+        ><img
+          class="logoimg"
+          src="./pictures/logo.png"
+          style="width: 45px; height: 45px; position: absolute; left: 10px"
+          alt="艾尔登法环logo"
+      /></a>
+
+      <h1
+        style="
+          color: goldenrod;
+          position: relative;
+          left: -520px;
+          font-size: xx-large;
+        "
+      >
+        <a
+          href="./index.html"
+          style="
+            color: rgb(255, 210, 97);
+            font-family: 'Courier New', Courier, monospace;
+          "
+          >艾尔登法环图鉴</a
+        >
+      </h1>
+    </div>
+
+    <div class="topnav">
+      <ul class="navContainer">
+        <li class="navli dropdown">
+          <a href="javascript:void(0)" class="dropbtn">武器</a>
+          <div class="dropdown-content">
+            <a href="./01_Dagger.html">短剑</a>
+            <a href="./02_StraightSword.html">直剑</a>
+            <a href="#">大剑</a>
+            <a href="#">特大剑</a>
+            <a href="#">刺剑</a>
+            <a href="#">重刺剑</a>
+            <a href="#">刀</a>
+            <a href="#">曲剑</a>
+            <a href="#">大曲剑</a>
+            <a href="#">双头剑</a>
+            <a href="#">斧</a>
+            <a href="#">大斧</a>
+            <a href="#">连枷</a>
+            <a href="#">槌</a>
+            <a href="#">大槌</a>
+            <a href="#">特大武器</a>
+            <a href="#">矛/大矛/戟</a>
+            <a href="#">鞭/镰刀/火把</a>
+            <a href="#">拳套/钩爪</a>
+            <a href="#">弓/弩</a>
+            <a href="#">盾牌</a>
+            <a href="#">法杖</a>
+            <a href="#">印记</a>
+          </div>
+        </li>
+        <li class="navli dropdown">
+          <a href="javascript:void(0)" class="dropbtn">战灰</a>
+          <div class="dropdown-content">
+            <a href="#">神秘</a>
+            <a href="#">普通</a>
+            <a href="#">锋利</a>
+            <a href="#">优质</a>
+            <a href="#">厚重</a>
+            <a href="#">魔力</a>
+            <a href="#">雷电</a>
+            <a href="#">血</a>
+            <a href="#">毒</a>
+            <a href="#">寒冷</a>
+            <a href="#">火焰</a>
+            <a href="#">神圣</a>
+          </div>
+        </li>
+        <li class="navli dropdown">
+          <a href="javascript:void(0)" class="dropbtn">祷告</a>
+          <div class="dropdown-content">
+            <a href="#">传说</a>
+            <a href="#">癫火</a>
+            <a href="#">火焰</a>
+            <a href="#">雷电</a>
+            <a href="#">毒</a>
+            <a href="#">黄金</a>
+            <a href="#">双指</a>
+            <a href="#">野兽</a>
+            <a href="#">腐败</a>
+            <a href="#">神皮</a>
+            <a href="#">鲜血君王</a>
+            <a href="#">龙飨</a>
+          </div>
+        </li>
+        <li class="navli dropdown">
+          <a href="javascript:void(0)" class="dropbtn">魔法</a>
+          <div class="dropdown-content">
+            <a href="#">传说</a>
+            <a href="#">寒冷</a>
+            <a href="#">辉石</a>
+            <a href="#">王室</a>
+            <a href="#">结晶</a>
+            <a href="#">瑟利亚</a>
+            <a href="#">重力</a>
+            <a href="#">死术</a>
+            <a href="#">格密尔</a>
+            <a href="#">异端</a>
+          </div>
+        </li>
+
+        <li class="navli dropdown idleee"><a href=""></a></li>
+        <!-- <li class="navli">
+          <a href="./04book.html" target="_blank">管理</a>
+        </li> -->
+        <li class="navli dropdown">
+          <a href="./login.html" style="float: right">登录</a>
+        </li>
+        <li class="navli dropdown">
+          <a href="./register.html" style="float: right">注册</a>
+        </li>
+        <li class="navli dropdown">
+          <a href="./logout.html" id="logoutID">注销</a>
+        </li>
+      </ul>
+    </div>
+    <div class="subhead">
+      <h1>武器-直剑</h1>
+    </div>
+    <div class="row">
+      <div class="leftcolumn">
+        <ul class="menuul">
+          <li><a href="#ShortSword">短剑</a></li>
+          <li><a href="#LongSword">长剑</a></li>
+          <li><a href="#BroadSword">阔剑</a></li>
+          <li><a href="javascript:void">老旧直剑</a></li>
+          <li><a href="javascript:void">君王军直剑</a></li>
+          <li><a href="javascript:void">权贵细身剑</a></li>
+          <li><a href="javascript:void">手杖剑</a></li>
+          <li><a href="javascript:void">战鹰爪形剑</a></li>
+          <li><a href="javascript:void">拉兹利辉石剑</a></li>
+          <li><a href="javascript:void">卡利亚骑士剑</a></li>
+          <li><a href="javascript:void">结晶剑</a></li>
+          <li><a href="javascript:void">腐败结晶剑</a></li>
+          <li><a href="javascript:void">米凯拉骑士剑</a></li>
+          <li><a href="javascript:void">仪式直剑</a></li>
+          <li><a href="javascript:void">黄金墓碑</a></li>
+          <li><a href="javascript:void">托莉娜剑</a></li>
+          <li><a href="javascript:void">欧赫宝剑</a></li>
+          <li><a href="javascript:void">秘文剑</a></li>
+          <li><a href="javascript:void">夜与火之剑</a></li>
+        </ul>
+      </div>
+      <div class="rightcolumn">
+        <!-- 短剑 -->
+        <a name="ShortSword"></a>
+        <hr align="left" width="1170" color="goldenrod" size="5" />
+        <h2>短剑</h2>
+        <img src="./pictures/160px-短剑.png" alt="短剑" style="float: right" />
+        <h3>简介</h3>
+        <p>剑身短小的小型直剑。</p>
+        <br />
+        <p>能使出通用性高的普通属性攻击， 也能使出攻击力高的突刺属性攻击，</p>
+        <br />
+        <p>在直剑类武器中重量偏轻， 必需能力值要求较低，容易上手。</p>
+        <h3>获取地点</h3>
+        <p>狭间之地各区域的士兵（短剑）概率掉落/圣人桥-东桥头流浪商人处购买</p>
+        <h3>专属战技</h3>
+        <p>无专属战技</p>
+        <h3>武器使用强化石类型</h3>
+        <p>锻造石</p>
+        <!-- 长剑 -->
+        <a name="LongSword"></a>
+        <hr align="left" width="1170" color="goldenrod" size="5" />
+        <h2>长剑</h2>
+        <img src="./pictures/160px-长剑.png" alt="长剑" style="float: right" />
+        <h3>简介</h3>
+        <p>具有笔直剑身的双刃直剑。</p>
+        <br />
+        <p>
+          能使出通用性高的普通属性攻击， 也能使出攻击力高的突刺属性攻击，
+          是平衡性极佳的武器。
+        </p>
+
+        <h3>获取地点</h3>
+        <p>流浪骑士开局武器/大赐福铃珠商人购买</p>
+        <h3>专属战技</h3>
+        <p>无专属战技</p>
+        <h3>武器使用强化石类型</h3>
+        <p>锻造石</p>
+        <!-- 阔剑 -->
+        <a name="BroadSword"></a>
+        <hr align="left" width="1170" color="goldenrod" size="5" />
+        <h2>阔剑</h2>
+        <img src="./pictures/160px-阔剑.png" alt="阔剑" style="float: right" />
+        <h3>简介</h3>
+        <p>剑身较宽的直剑。</p>
+        <br />
+        <p>适合用于斩击。</p>
+        <br />
+        <p>横扫攻击的攻击范围大， 具有容易打中敌人的优点。</p>
+        <h3>获取地点</h3>
+        <p>密使开局武器/宁姆格福-海岸洞窟外流浪商人购买</p>
+        <h3>专属战技</h3>
+        <p>无专属战技</p>
+        <h3>武器使用强化石类型</h3>
+        <p>锻造石</p>
+      </div>
+    </div>
+  </body>
+</html>
